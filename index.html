@@ -12,31 +12,28 @@
     <h1>Pig Dice</h1>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <form id="player1">
+      <form class="playerInput">
+        <div class="row">
+          <div class="col-md-3">
             <div class="form-group">
               <label for="player1Name">Player 1:</label>
               <input type="text" id="player1Name" class="form-control">
             </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <img id="dogPhoto" src="img/kili.jpg" alt="A photo of Kili, the dog">
+            <br><br>
             <button type="submit" class="btn btn-info">Submit</button>
             <span class="btn btn-default" id="rollButton">Roll</span>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <img id="dogPhoto" src="img/kili.jpg" alt="A photo of Kili, the dog">
-        </div>
-        <div class="col-md-3">
-          <form id="player2">
+          </div>
+          <div class="col-md-3">
             <div class="form-group">
               <label for="player2Name">Player 2:</label>
               <input type="text" id="player2Name" class="form-control">
             </div>
-            <button type="submit" class="btn btn-info">Submit</button>
-            <span class="btn btn-default" id="rollButton">Roll</span>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
 
