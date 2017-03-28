@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <href link="bootstrap.css" rel="stylesheet" type="text/css">
-    <href link="styles.css" rel="stylesheet" type="text/css">
-    <script src="jQuery-3.2.0.js"></script>
-    <script src="scripts.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/scripts.js"></script>
     <title>Pig Dice!</title>
   </head>
   <body>
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
     <h1>Pig Dice</h1>
     </div>
     <div class="container">
@@ -20,10 +20,11 @@
               <input type="text" id="player1Name" class="form-control">
             </div>
             <button type="submit" class="btn btn-info">Submit</button>
-            <button id="rollButton">Roll</button>
+            <span class="btn" id="rollButton">Roll</span>
+          </form>
         </div>
         <div class="col-md-6">
-          <img src="img/kili.jpg" alt="A photo of Kili, the dog">
+          <img id="dogPhoto" src="img/kili.jpg" alt="A photo of Kili, the dog">
         </div>
         <div class="col-md-3">
           <form id="player2">
@@ -32,8 +33,10 @@
               <input type="text" id="player2Name" class="form-control">
             </div>
             <button type="submit" class="btn btn-info">Submit</button>
-            <button id="rollButton">Roll</button>
+            <span class="btn" id="rollButton">Roll</span>
+          </form>
         </div>
+      </div>
     </div>
 
 
