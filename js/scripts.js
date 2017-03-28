@@ -1,8 +1,8 @@
 // business logic
-function Player(name, turnScore, playerScore) {
+function Player(name) {
   this.playerName = name;
-  this.turnScore = turnScore;
-  this.playerScore = playerScore;
+  this.turnScore = 0;
+  this.playerScore = 0;
 }
 
 function Die(sides) {
