@@ -17,19 +17,20 @@ var die = new Die();
 
 function TurnPlayer(player1, player2, turnCount) {
   if (turnCount % 2 === 0) {
-    player2Turn = true;
+    return player2;
   } else {
-    player1Turn = true;
+    return player1;
   }
 }
 
-Die.prototype.rollDie = function() {
+Die.prototype.rollDie = function(turnCount, player) {
   var rolledSide = this.sides[Math.floor(Math.random() * this.sides.length)];
+  console.log(rolledSide);
   if (rolledSide === 1) {
-    turnScore = 0
+    player.turnScore = 0
     turnCount += 1;
   } else {
-    turnScore += rolledSide;
+    player.turnScore += rolledSide;
   }
 }
 
@@ -52,7 +53,10 @@ $(document).ready(function() {
   });
 
   $("#rollButton").click(function(){
-    die.rollDie();
+    var currentPlayer = TurnPlayer(player1, player2, turnCount)
+    die.rollDie(turnCount, currentPlayer);
+
+
     console.log(turnScore);
     console.log(player1);
     console.log(player2);
