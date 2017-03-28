@@ -27,8 +27,8 @@ Die.prototype.rollDie = function(turnCount, player) {
   var rolledSide = this.sides[Math.floor(Math.random() * this.sides.length)];
   console.log(rolledSide);
   if (rolledSide === 1) {
-    player.turnScore = 0
-    turnCount += 1;
+    player.turnScore = 0;
+    turnCount ++;
   } else {
     player.turnScore += rolledSide;
   }
@@ -57,8 +57,8 @@ $(document).ready(function() {
     die.rollDie(turnCount, currentPlayer);
 
 
-    console.log(turnScore);
+    console.log(turnCount);
     console.log(player1);
     console.log(player2);
-  })
+  });
 });
