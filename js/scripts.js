@@ -1,7 +1,4 @@
 // business logic
-var turnScore = 0;
-var playerScore = 0;
-var turnCount = 1;
 
 function Player(name) {
   this.playerName = name;
@@ -23,12 +20,11 @@ function TurnPlayer(player1, player2, turnCount) {
   }
 }
 
-Die.prototype.rollDie = function(turnCount, player) {
+Die.prototype.rollDie = function(player) {
   var rolledSide = this.sides[Math.floor(Math.random() * this.sides.length)];
   console.log(rolledSide);
   if (rolledSide === 1) {
     player.turnScore = 0;
-    turnCount ++;
   } else {
     player.turnScore += rolledSide;
   }
@@ -38,15 +34,16 @@ Die.prototype.rollDie = function(turnCount, player) {
 $(document).ready(function() {
   var player1;
   var player2;
+  var turnCount = 1;
 
   $("form").submit(function(event) {
     event.preventDefault();
 
   var player1Name = $("input#player1Name").val();
-  player1 = new Player(player1Name, turnScore, playerScore);
+  player1 = new Player(player1Name);
 
   var player2Name = $("input#player2Name").val();
-  player2 = new Player(player2Name, turnScore, playerScore);
+  player2 = new Player(player2Name);
 
   console.log(player1);
   console.log(player2);
@@ -54,8 +51,10 @@ $(document).ready(function() {
 
   $("#rollButton").click(function(){
     var currentPlayer = TurnPlayer(player1, player2, turnCount)
-    die.rollDie(turnCount, currentPlayer);
-
+    die.rollDie(currentPlayer);
+    if (currentPlayer.turnScore === 0) {
+      turnCount++;
+    }
 
     console.log(turnCount);
     console.log(player1);
