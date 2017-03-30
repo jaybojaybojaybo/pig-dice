@@ -18,6 +18,14 @@
   display: none;
 }
 
+#rollButton {
+  display: none;
+}
+
+#holdButton {
+  display: none;
+}
+
 #newGameButton {
   display: none;
 }

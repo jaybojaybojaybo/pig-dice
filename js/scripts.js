@@ -32,7 +32,7 @@ Die.prototype.rollDie = function(player) {
 }
 
 Player.prototype.checkForWin = function(player) {
-  if (this.playerScore >= 10) {
+  if (this.playerScore >= 100) {
     return true;
   } else {
     return false;
@@ -49,6 +49,9 @@ $(document).ready(function() {
 
   $("form").submit(function(event) {
     event.preventDefault();
+    $("#rollButton").show();
+    $("#holdButton").show();
+    $("#readyButton").hide();
 
     var player1Name = $("input#player1Name").val();
     player1 = new Player(player1Name);
@@ -92,9 +95,15 @@ $(document).ready(function() {
       if (currentPlayer === player1 && win === true) {
         $("#player1Win").show();
         $("#newGameButton").show();
+        $("#rollButton").hide();
+        $("#holdButton").hide();
+        $("#rS").hide();
       } else if (currentPlayer === player2 && win === true) {
         $("#player2Win").show();
         $("#newGameButton").show();
+        $("#rollButton").hide();
+        $("#holdButton").hide();
+        $("#rS").hide();
       }
 
     console.log(currentPlayer);

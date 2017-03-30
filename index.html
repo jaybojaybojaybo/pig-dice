@@ -17,7 +17,7 @@
           <div class="col-md-3">
             <div class="form-group">
               <label for="player1Name">Player 1:</label>
-              <input type="text" id="player1Name" class="form-control">
+              <input type="text" id="player1Name" class="form-control" placeholder="Player 1">
             </div>
             <div id="player1Info">
               <h3>Turn Score:<span id="player1TurnScore"></span></h3>
@@ -28,17 +28,17 @@
           <div class="col-md-6 text-center">
             <img id="dogPhoto" src="img/kili.jpg" alt="A photo of Kili, the dog">
             <br><br>
-            <button type="submit" class="btn btn-info">Submit</button>
-            <span class="btn btn-default" id="rollButton">Roll</span>
-            <span class="btn btn-success" id="holdButton">Hold</span>
-            <span class="btn btn-warning" id="newGameButton">New Game</span>
+            <button type="submit" class="btn btn-info btn-lg" id="readyButton">Ready!</button>
+            <span class="btn btn-default btn-lg" id="rollButton">Roll</span>
+            <span class="btn btn-success btn-lg" id="holdButton">Hold</span>
+            <span class="btn btn-warning btn-lg" id="newGameButton">New Game</span>
             <br><br>
-            <h3>Roll Score:<span id="rollScore"></span></h3>
+            <h1 id="rS">Roll Score:<span id="rollScore"></span></h1>
           </div>
           <div class="col-md-3">
             <div class="form-group">
               <label for="player2Name">Player 2:</label>
-              <input type="text" id="player2Name" class="form-control">
+              <input type="text" id="player2Name" class="form-control" placeholder="Player 2">
             </div>
             <div id="player2Info">
               <h3>Turn Score:<span id="player2TurnScore"></span></h3>
@@ -49,8 +49,5 @@
         </div>
       </form>
     </div>
-
-
-    <p id="output"></p>
   </body>
 </html>
