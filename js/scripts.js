@@ -35,18 +35,16 @@ $(document).ready(function() {
   var player1;
   var player2;
   var turnCount = 1;
+  var currentPlayer;
 
   $("form").submit(function(event) {
     event.preventDefault();
 
-  var player1Name = $("input#player1Name").val();
-  player1 = new Player(player1Name);
+    var player1Name = $("input#player1Name").val();
+    player1 = new Player(player1Name);
 
-  var player2Name = $("input#player2Name").val();
-  player2 = new Player(player2Name);
-
-  console.log(player1);
-  console.log(player2);
+    var player2Name = $("input#player2Name").val();
+    player2 = new Player(player2Name);
   });
 
   $("#rollButton").click(function(){
@@ -55,9 +53,22 @@ $(document).ready(function() {
     if (currentPlayer.turnScore === 0) {
       turnCount++;
     }
-
     console.log(turnCount);
     console.log(player1);
     console.log(player2);
   });
+
+  $("#holdButton").click(function() {
+    var currentPlayer = TurnPlayer(player1, player2, turnCount)
+    if (currentPlayer === player1) {
+      player1.playerScore += player1.turnScore;
+      turnCount++;
+      player1.turnScore = 0;
+    } else {
+      player2.playerScore += player2.turnScore;
+      turnCount++;
+      player2.turnScore = 0;
+    }
+    console.log(currentPlayer);
+  })
 });
