@@ -60,15 +60,10 @@ $(document).ready(function() {
 
   $("#holdButton").click(function() {
     var currentPlayer = TurnPlayer(player1, player2, turnCount)
-    if (currentPlayer === player1) {
-      player1.playerScore += player1.turnScore;
+      currentPlayer.playerScore += currentPlayer.turnScore;
+      currentPlayer.turnScore = 0;
       turnCount++;
-      player1.turnScore = 0;
-    } else {
-      player2.playerScore += player2.turnScore;
-      turnCount++;
-      player2.turnScore = 0;
-    }
+      
     console.log(currentPlayer);
   })
 });
