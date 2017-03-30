@@ -2,3 +2,18 @@
   max-height: 100%;
   max-width: 100%;
 }
+#player1Info {
+  display: none;
+}
+
+#player2Info {
+  display: none;
+}
+
+#player1Win {
+  display: none;
+}
+
+#player2Win {
+  display: none;
+}
