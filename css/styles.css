@@ -17,3 +17,7 @@
 #player2Win {
   display: none;
 }
+
+#newGameButton {
+  display: none;
+}

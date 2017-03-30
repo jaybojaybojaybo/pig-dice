@@ -32,7 +32,7 @@ Die.prototype.rollDie = function(player) {
 }
 
 Player.prototype.checkForWin = function(player) {
-  if (this.playerScore >= 100) {
+  if (this.playerScore >= 10) {
     return true;
   } else {
     return false;
@@ -91,10 +91,30 @@ $(document).ready(function() {
     var win = currentPlayer.checkForWin();
       if (currentPlayer === player1 && win === true) {
         $("#player1Win").show();
+        $("#newGameButton").show();
       } else if (currentPlayer === player2 && win === true) {
         $("#player2Win").show();
+        $("#newGameButton").show();
       }
 
     console.log(currentPlayer);
+  });
+
+  $("#newGameButton").click(function() {
+    window.location.reload();
+    // player1 = new Player(player1Name);
+    // $("#player1PlayerScore").text(" " + player1.playerScore);
+    // $("#player1TurnScore").text(" " + player1.turnScore);
+    // $("#player1Win").hide();
+    //
+    // player2 = new Player(player2Name);
+    // $("#player2PlayerScore").text(" " + player2.playerScore);
+    // $("#player2TurnScore").text(" " + player2.turnScore);
+    // $("#player2Win").hide();
+    //
+    // rolledSide === 0;
+    // $("#rollScore").text(" " + rolledSide);
+    //
+    // $("#newGameButton").hide();
   })
 });
